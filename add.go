@@ -7,11 +7,11 @@ import (
 	"github.com/cdvelop/model"
 )
 
-func Add(log model.Logger) (*HttpClient, error) {
+func Add(l model.Logger, c *cutkey.Cut) (*HttpClient, error) {
 
 	n := HttpClient{
-		Logger:     nil,
-		Cut:        &cutkey.Cut{},
+		Logger:     l,
+		Cut:        c,
 		onComplete: js.Func{},
 	}
 
